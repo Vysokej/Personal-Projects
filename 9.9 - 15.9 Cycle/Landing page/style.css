@@ -20,4 +20,56 @@ html, body {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-size: 20px;
+}
+h1, h2, h3, p, a, input {
+  color: var(--text);
+  text-decoration: none;
+}
+/* NavBar ----------------- */
+nav {
+  display: flex;
+  height: 50px;
+  width: 100%;
+  justify-content: space-around;
+}
+nav img {
+  height: 40px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+div, ul {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+a[href="#main"] {
+  display: flex;
+  align-items: center;
+}
+.aNav {
+  transition: 0.1s ease-out;
+  border-bottom: 3px solid transparent;
+  font-size: 1rem;
+  text-align: center;
+}
+.aNav:hover {
+  border-bottom: 3px solid var(--accent);
+  box-sizing: content-box;
+}
+/* Main banner --------------------- */
+#main {
+  width: 100%;
+  min-height: 300px;
+  height: auto;
+  /* DELETE LATER */ border: 1px solid black;
+}
+#main .container {
+  width: inherit;
+  height: inherit;
+}
+#main img {
+  object-fit: cover;
+  aspect-ratio: 1/1;
+  width: calc(0.6*100vw);
 }
