@@ -21,6 +21,7 @@ html, body {
     padding: 0px;
     box-sizing: border-box;
     font-size: 20px;
+    overflow-x: hidden;
 }
 h1, h2, h3, p, a, input {
   color: var(--text);
@@ -60,16 +61,95 @@ a[href="#main"] {
 /* Main banner --------------------- */
 #main {
   width: 100%;
-  min-height: 300px;
-  height: auto;
-  /* DELETE LATER */ border: 1px solid black;
+  height: calc(auto + 100px);
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 #main .container {
-  width: inherit;
-  height: inherit;
+  width: 50%;
+  min-width: 351px;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+}
+#main .container div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 3rem;
 }
 #main img {
   object-fit: cover;
   aspect-ratio: 1/1;
   width: calc(0.6*100vw);
+  max-width: 800px;
+  position: relative;
+  right: 0px;
+  top: 50px;
+}
+#main h1 {
+  z-index: 999;
+  width: 100%;
+  position: relative;
+  top: 50px;
+  font-size: 2.3rem;
+  backdrop-filter: blur(1px);
+}
+#main em {
+  color: transparent;
+  text-decoration-style: double;
+  font-size: 3rem;
+  -webkit-text-stroke: var(--primary) 1px;
+  text-decoration: underline;
+}
+#main strong {
+  font-weight: bold;
+  color: var(--secondary);
+}
+#main a[href="#services"] {
+  margin-top: 10px;
+  z-index: 999;
+  width: 120px;
+  height: 40px;
+  background-color: var(--CTAcolor);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: 0.15s;
+  --CTAcolor: #fff200; /* Used to change color of border and button */
+  animation: sizer 1.5s ease-in-out infinite;
+}
+#main a[href="#services"]:hover {
+  --CTAcolor: #eae595;
+  background-color: var(--CTAcolor);
+  transform: scale(1.24);
+  animation: none;
+}
+#main a[href="#services"]::after {
+  content: "";
+  position: absolute;
+  width: 105%;
+  height: 120%;
+  border: 3px solid var(--CTAcolor);
+  border-radius: 5px;
+  z-index: 999;
+}
+@keyframes sizer {
+  0% {
+    transform: scale(1.20);
+  }
+  25% {
+    transform: scale(1.24);
+  }
+  40% {
+   transform: scale(1.20); 
+  }
+  100% {
+    transform: scale(1.20); 
+  }
 }
