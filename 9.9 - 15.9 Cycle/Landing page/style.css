@@ -51,7 +51,14 @@ a[href="#main"] {
   display: flex;
   align-items: center;
 }
+nav ul {
+  width: 346px;
+}
+.aNav:nth-of-type(2) {
+  width: 100px;
+}
 .aNav {
+  width: auto;
   transition: 0.1s ease-out;
   border-bottom: 3px solid transparent;
   font-size: 1rem;
@@ -160,6 +167,7 @@ a[href="#main"] {
 }
 /* about section ( Why us? ) ---------- */
 #about {
+  margin-top: 50px;
   position: relative;
   top: 100px;
   height: calc(auto + 10px);
@@ -180,8 +188,7 @@ a[href="#main"] {
 #about div:last-of-type {
   overflow: unset;
 }
-
-#about div:nth-of-type(2) { /* Review box -> blur on edge, floating 5 star reviews in the box, gliding across infinitely */
+#about div:nth-of-type(2) {
   display: flex; justify-content: center; align-items: center;
 }
 #about div:nth-of-type(2) h1 {
@@ -204,12 +211,26 @@ a[href="#main"] {
 #about p {
   margin: 0px;
 }
+/* scroll animation */
+.scroll-animation {
+  animation: scroll-animation both;
+  animation-timeline: view(60% 0%);
+}
+@keyframes scroll-animation {
+  from {
+    opacity: 0;
+    transform: translateY(-200px) scale(0.3);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}
 /* Services -------------- */
 #services {
   margin-top: 150px;
   height: 500px;
   border-top: 2px solid var(--text);
-  /* DELETE LATER */ border-bottom: blue 5px solid;
   background-color: rgba(1, 1, 1, 0.03);
   display: flex;
   flex-direction: column;
@@ -221,26 +242,24 @@ a[href="#main"] {
   margin-left: 3vw;
 }
 #services .container {
+  margin-top: 10px;
   display: flex;
   align-items: center;
   height: auto;
   width: 100%; 
   margin-left: 3vw;
   overflow: visible;
-  gap: 5px;
+  gap: 10px;
 }
 /* div animations styling etc */
 #services img {
   object-fit: cover;
   height: 100%;
   width: 100%;
-}
-#services .container >div:hover + img {
-  opacity: 0;
+  border-radius: 5px 5px 0px 0px;
 }
 #services .container > div > div {
   height: 100%;
-  
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -248,25 +267,24 @@ a[href="#main"] {
 }
 #services .container > div > div h1, #services .container > div > div p {
   margin: 0px;
-  margin-left: 3vw;
+  margin-left: 0.5vw;
 }
 #services .container > div {
   border-radius: 5px;
   height: 300px;
   width: 200px;
-  border: 1px solid;
   flex-shrink: 0;
   display: grid;
   grid-template-rows: 60% 40%;
   grid-template-columns: 100%;
-  transition: 0.15s;
+  transition: 0.35s ease-out;
 }
-/* Add "checkout" button, it will have a transparent bottom right border that will change to var(--border-cta-color) upon a div being hovered */
-/* animation hover effect */
+/* animation div:hover effect */
 #services .container > div:hover {
   transform: scale(1.05);
-  --border-cta-button: #0f0f0d;
+  cursor: pointer;
 }
+@media (min-width: 1000px) {
 #services .container > div:hover + * { /*right */
   transform: scale(.1.03);
   filter: brightness(0.8);
@@ -309,9 +327,137 @@ a[href="#main"] {
 }
 #services .container > div:hover + * + * + * + * + * + *{ /*right + + + + + */
   transform: scale(1);
-  filter: brightness(0);
+  filter: brightness(0.1);
 }
 #services .container > div:has(+ * + * + * + * + * + *:hover) { /*left + + + + + */
   transform: scale(1);
-  filter: brightness(0);
+  filter: brightness(0.1);
+}
+}
+#services span {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.price {
+  position: relative;
+  left: -30px;
+}
+#services a[href="#"] {
+  border-radius: 5px;
+  background-color: var(--secondary);
+  padding: 3px 10px;
+  transition: 0.15s;
+  border-right: 4px solid var(--text);
+  border-bottom: 4px solid var(--text);
+}
+#services a[href="#"]:hover {
+  background-color: var(--primary);
+}
+/* About Us section ------------------------------- */
+#aboutUs {
+  height: auto;
+  width: 100%;
+}
+#aboutUs h1 {
+  font-weight: 350;
+  text-align: center;
+}
+#aboutUs .container {
+  max-height: 350px;
+  margin: auto;
+  width: 90%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#aboutUs img {
+  object-fit: cover;
+  aspect-ratio: 1/1;
+  width: 50%;
+  max-width: 360px;
+}
+#aboutUs p {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  height: 217px;
+  width: 465px;
+}
+/* Contact us -------------------- */
+#contact {
+  height: 200px;
+  width: 100%;
+  margin-top: 200px;
+  overflow: visible;
+}
+#contact h1 {
+  font-weight: 350;
+}
+#contact .container {
+  margin: auto;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+#contact .container form {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  height: auto;
+  overflow: visible;
+}
+form p {
+  margin: 0px;
+}
+form input {
+  border-radius: 5px;
+  border: 1px solid rgba(1, 1, 1, 0.1);
+  width: 50%;
+  height: 30px;
+}
+::placeholder {
+  position: relative;
+  left: 10px;
+}
+textarea {
+  width: 100%;
+  display: flex;
+}
+form #submit {
+  background-color: var(--primary);
+  font-size: 1rem;
+  width: 30%;
+}
+/* Footer ---------------- */
+Footer {
+  margin-top: 200px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+}
+Footer img {
+  margin-left: 10px;
+}
+
+/* Responsiveness for screens under 400px width */
+@media (max-width: 400px) {
+  nav h3, nav img {
+    display: none;
+  }
+  nav {
+    justify-content: center;
+  }
+
+  #aboutUs .container {
+    flex-wrap: wrap;
+  }
+  #aboutUs p {
+    margin-top: 70px;
+  }
 }
