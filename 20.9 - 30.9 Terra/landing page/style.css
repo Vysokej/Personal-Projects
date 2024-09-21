@@ -1,0 +1,65 @@
+:root {
+
+    /* Primary: Red Potion */
+    --primary-100: #FFF2F2;
+    --primary-200: #FFBCBE;
+    --primary-300: #FB858F;
+    --primary-400: #F24D65;
+    --primary-500: #E01941;
+    --primary-600: #B20834;
+    --primary-700: #83022B;
+    --primary-800: #550020;
+    --primary-900: #260011;
+
+    /* Accent: Space Opera */
+    --accent-100: #F9F2FF;
+    --accent-200: #DCBEFF;
+    --accent-300: #B888FB;
+    --accent-400: #8B51F3;
+    --accent-500: #591EE3;
+    --accent-600: #330AB4;
+    --accent-700: #1A0285;
+    --accent-800: #0B0055;
+    --accent-900: #030026;
+
+    /* Neutral */
+    --neutral-100: #FCFAFA;
+    --neutral-200: #ECE8E8;
+    --neutral-300: #DBD6D6;
+    --neutral-400: #CBC4C5;
+    --neutral-500: #BAB3B4;
+    --neutral-600: #958D8F;
+    --neutral-700: #70686A;
+    --neutral-800: #4B4547;
+    --neutral-900: #262224;
+    
+}
+html, body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    height: 100%;
+}
+/* Font classes */
+.sans {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+.sans_bold {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+.nunito {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 350;
+  font-style: normal;
+}
+h1, h2, h3, h4, h5, h6, a {
+    /*Fill out general code*/
+}
+p {
+    /*Fill out general code*/  
+}
