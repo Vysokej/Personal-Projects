@@ -40,16 +40,14 @@ html, body {
     box-sizing: border-box;
     height: 100%;
     font-size: 18px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    background-color: var(--neutral-100);
 }
 /* Font classes */
 .sans {
     font-family: "PT Sans", sans-serif;
     font-weight: 400;
-    font-style: normal;
-  }
-.sans_bold {
-    font-family: "PT Sans", sans-serif;
-    font-weight: 700;
     font-style: normal;
   }
 .nunito {
@@ -58,16 +56,207 @@ html, body {
   font-weight: 350;
   font-style: normal;
 }
+.bold {
+  font-weight: bold;
+}
+.border-radius {
+  border-radius: 5px;
+}
+.no-margin {
+  margin: 0px;
+}
+.icon {
+  height: 30px;
+}
 p {
   font-size: 1rem;
 }
-
+a {
+  text-decoration: none;
+  color: var(--neutral-100);
+  background-color: var(--primary-500);
+  padding: 5px;
+}
+.scroll-animation {
+  animation: scroll-animation both;
+  animation-timeline: view(70% 5%);
+}
+.scroll-slide {
+  animation: scroll-slide both;
+  animation-timeline: view(70% 0%);
+}
+.show-up {
+  animation: show-up both;
+  animation-timeline: view(70% 5%);
+}
+@keyframes scroll-animation {
+  from {
+    opacity: 0;
+    transform: translateY(-200px) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px) scale(1);
+  }
+}
+@keyframes scroll-slide {
+  from {
+    opacity: 0;
+    transform: translateX(-200px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px) scale(1);
+  }
+}
+@keyframes show-up {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 /* Nav Bar styling */
 nav {
+  position: relative;
+  top: 20px;
   font-size: 1.5rem;
+  width: 100%;
+  height: 25px;
   display: flex;
   align-items: center;
+  justify-content: space-around;
+  color: var(--primary-500);
+  font-size: 1rem;
+}
+nav div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+nav img {
+  object-fit: cover;
+  aspect-ratio: 1/1;
+  height: 28px;
+}
+nav h1 {
+  font-weight: 500;
+}
+nav a {
+  background-color: unset;
+  color: var(--primary-500);
+  border: 2px solid var(--primary-500);
+  transition: 0.15s;
+}
+nav a:hover {
+  position: relative;
+  font-weight: bolder;
+  transform: scale(1.02);
+}
+
+/* Hero page ---------------- */
+#hero {
+  height: auto;
   width: 100%;
-  height: 50px;
-  /* DELTE LATER */ border: 2px solid yellow;
+  margin-top: 50px;
+}
+#hero .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 355px;
+}
+#hero video {
+  min-height: 200px;
+  height: 23vw;
+  object-fit: cover;
+  aspect-ratio: 3/1;
+  object-position: right;
+  filter: grayscale(1);
+}
+#hero a { /* Main cta */
+  font-size: 1.5rem;
+  padding: 10px;
+  box-shadow: 0px 6px 8px 0px rgba(224, 25, 65, 1);
+  box-shadow: 0px 14px 39px 0px rgba(224, 25, 65, 1);
+
+  transition: .8s ease;
+}
+#hero a:hover {
+  box-shadow: 0px 0px 50px 0px rgba(224, 25, 65, 1);
+  transform: scale(1.03);
+  font-weight: bolder;
+}
+
+/* Features section -------------- */
+#features {
+  height: auto;
+  width: 100%;
+  margin-top: 100px;
+}
+#features > div { /* Divs dividing features into two section */
+  height: auto;
+  width: 100%;
+}
+#features-shorts {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  max-width: 1060px;
+  margin: auto;
+}
+#features-shorts span {
+  display: flex;
+  align-items: center;
+  gap: 10px ;
+  width: auto;
+}
+#features-shorts p {
+  max-width: 250px;
+}
+/* features long */
+#features-long {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#features-long h2, #features-long li {
+  display: flex;
+  gap: 20px ;
+  align-items: center;
+}
+#features-long h2 img {
+  position: relative;
+  left: 10px;
+}
+#features-long ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#image-last {
+  height: 300px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Reviews ------------- */
+#reviews {
+  height: 500px;
 }
