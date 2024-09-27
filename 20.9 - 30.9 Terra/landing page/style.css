@@ -39,6 +39,7 @@ html, body {
     padding: 0px;
     box-sizing: border-box;
     height: 100%;
+    width: 100%;
     font-size: 18px;
     overflow-x: hidden;
     scroll-behavior: smooth;
@@ -83,11 +84,15 @@ a {
 }
 .scroll-slide {
   animation: scroll-slide both;
-  animation-timeline: view(70% 0%);
+  animation-timeline: view(70% 10%);
 }
 .show-up {
   animation: show-up both;
   animation-timeline: view(70% 5%);
+}
+.img-slider {
+  animation: img-slider both;
+  animation-timeline: view(100% 5%);
 }
 @keyframes scroll-animation {
   from {
@@ -115,6 +120,14 @@ a {
   }
   to {
     opacity: 1;
+  }
+}
+@keyframes img-slider {
+  from {
+    object-position: left;
+  }
+  to {
+    object-position: center;
   }
 }
 /* Nav Bar styling */
@@ -158,9 +171,9 @@ nav a:hover {
 
 /* Hero page ---------------- */
 #hero {
+  margin-top: 40px;
   height: auto;
   width: 100%;
-  margin-top: 50px;
 }
 #hero .container {
   display: flex;
@@ -177,15 +190,14 @@ nav a:hover {
   object-position: right;
   filter: grayscale(1);
 }
-#hero a { /* Main cta */
+.CTA { /* Main cta */
   font-size: 1.5rem;
   padding: 10px;
   box-shadow: 0px 6px 8px 0px rgba(224, 25, 65, 1);
   box-shadow: 0px 14px 39px 0px rgba(224, 25, 65, 1);
-
   transition: .8s ease;
 }
-#hero a:hover {
+.CTA:hover {
   box-shadow: 0px 0px 50px 0px rgba(224, 25, 65, 1);
   transform: scale(1.03);
   font-weight: bolder;
@@ -244,19 +256,92 @@ nav a:hover {
 #image-last {
   height: 300px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
+/* Divider ------------- */
+#divider {
+  margin-top: 10px;
+  height: 270px;
+  width: 200%;
+  background: rgb(224,25,65);
+  background: linear-gradient(100deg, rgba(224,25,65,1) 0%, rgba(89,30,227,1) 100%);
+}
 /* Reviews ------------- */
 #reviews {
-  height: 500px;
+  height: auto;
+  width: 100%;
+  margin-top: 100px;
+}
+#reviews .container {
+  width: 80%;
+  max-width: 1000px;
+  margin: auto;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#reviews .container > div {
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  border: 1px solid var(--neutral-300);
+}
+#reviews .container > div > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  width: 90%;
+  margin: auto;
+}
+#reviews span {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+#reviews p {
+  width: 90%;
+}
+#reviews img {
+  height: 100%;
+  object-fit: cover;
+  width: 40vw;
+  max-width: 300px;
+}
+/* last cta */
+#last-cta {
+  margin-top: 50px;
+  position: relative;
+}
+
+/* Footer --------------- */
+footer {
+  margin-top: 100px;
+  height: 300px;
+  background-color: var(--neutral-900);
+  color: var(--neutral-200);
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+footer .container {
+  margin-left: 15px;
+}
+footer p {
+  max-width: 500px;
+  width: 50%;
+}
+footer a  {
+  background-color: unset;
+  color: var(--accent-600);
+  text-decoration: underline;
 }
