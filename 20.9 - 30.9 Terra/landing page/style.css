@@ -72,6 +72,17 @@ html, body {
 p {
   font-size: 1rem;
 }
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+li {
+  display: flex;
+  gap: 20px ;
+  align-items: center;
+}
 a {
   text-decoration: none;
   color: var(--neutral-100);
@@ -191,14 +202,15 @@ nav a:hover {
   filter: grayscale(1);
 }
 .CTA { /* Main cta */
+  background-color: var(--accent-500);
   font-size: 1.5rem;
   padding: 10px;
-  box-shadow: 0px 6px 8px 0px rgba(224, 25, 65, 1);
-  box-shadow: 0px 14px 39px 0px rgba(224, 25, 65, 1);
+  box-shadow: 0px 6px 8px 0px rgba(89, 30, 227, 1);
+  box-shadow: 0px 14px 39px 0px rgba(89, 30, 227, 1);
   transition: .8s ease;
 }
 .CTA:hover {
-  box-shadow: 0px 0px 50px 0px rgba(224, 25, 65, 1);
+  box-shadow: 0px 0px 50px 0px rgba(89, 30, 227, 1);
   transform: scale(1.03);
   font-weight: bolder;
 }
@@ -238,20 +250,9 @@ nav a:hover {
   align-items: center;
   flex-wrap: wrap;
 }
-#features-long h2, #features-long li {
-  display: flex;
-  gap: 20px ;
-  align-items: center;
-}
 #features-long h2 img {
   position: relative;
   left: 10px;
-}
-#features-long ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
 }
 #image-last {
   height: 300px;
@@ -263,6 +264,81 @@ nav a:hover {
   width: 200%;
   background: rgb(224,25,65);
   background: linear-gradient(100deg, rgba(224,25,65,1) 0%, rgba(89,30,227,1) 100%);
+}
+/* Subscriptions ----------------------- */
+#subscriptions {
+  margin-top: 50px;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#subscriptions .container {
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+#subscriptions ul {
+  padding-left: 0px;
+  width: 100%;
+  gap: 20px;
+}
+#subscriptions li {
+  width: inherit;
+  gap: 20px;
+  justify-content: space-around;
+}
+#subscriptions a {
+  background-color: var(--accent-500);
+  position: relative;
+}
+#subscriptions .container > div {
+  width: 250px;
+  height: 400px;
+  padding-bottom: 10px;
+  border-radius: 20px;
+}
+#subscriptions .container > div > div:nth-of-type(2) { /* lower half of subscription box */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+} 
+#subscriptions .container > div > div:nth-of-type(1) { /* upper half of subscription box */
+  height: 80px;
+  width: 100%;
+  border-radius: 15px 15px 0px 0px;
+  color: var(--neutral-100);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#subscriptions .container > div:nth-last-of-type(1) > div:nth-of-type(1) {
+  background-color: var(--primary-300);
+}
+#subscriptions .container > div:nth-last-of-type(1) {
+  border: 4px solid var(--primary-400);
+}
+#subscriptions .container > div:nth-last-of-type(2) > div:nth-of-type(1) {
+  background-color: var(--accent-400);
+}
+#subscriptions .container > div:nth-last-of-type(2) {
+  border: 4px solid var(--accent-500);
+}
+#subscriptions .container > div:nth-last-of-type(3) > div:nth-of-type(1) {
+  background-color: var(--accent-700);
+}
+#subscriptions .container > div:nth-last-of-type(3) {
+  border: 4px solid var(--accent-800);
+}
+#subscriptions .container > div > div:nth-of-type(1) * {
+  margin: 0px;
 }
 /* Reviews ------------- */
 #reviews {
@@ -319,7 +395,6 @@ nav a:hover {
   margin-top: 50px;
   position: relative;
 }
-
 /* Footer --------------- */
 footer {
   margin-top: 100px;
@@ -338,7 +413,6 @@ footer .container {
 }
 footer p {
   max-width: 500px;
-  width: 50%;
 }
 footer a  {
   background-color: unset;
