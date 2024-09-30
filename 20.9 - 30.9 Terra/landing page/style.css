@@ -279,10 +279,13 @@ nav a:hover {
   height: auto;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
+}
+#subscriptions h1 {
+  text-align: center;
 }
 #subscriptions ul {
   padding-left: 0px;
@@ -297,6 +300,11 @@ nav a:hover {
 #subscriptions a {
   background-color: var(--accent-500);
   position: relative;
+  transition: 0.15s;
+}
+#subscriptions a:hover {
+  background-color: var(--accent-400);
+  transform: scale(1.03);
 }
 #subscriptions .container > div {
   width: 250px;
