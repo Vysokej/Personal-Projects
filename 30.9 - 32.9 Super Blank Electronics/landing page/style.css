@@ -1,37 +1,36 @@
 :root {
-    
-    /* Primary: Kiwi Green */
-    --primary-100: #F5FFF2;
-    --primary-200: #D8FFC7;
-    --primary-300: #BEFC9B;
-    --primary-400: #A7F46D;
-    --primary-500: #90E640;
-    --primary-600: #70B61E;
-    --primary-700: #56860E;
-    --primary-800: #3B5607;
-    --primary-900: #1C2603;
+    /* Primary: Caduceus Staff */
+    --primary-100: #FDFFF2;
+    --primary-200: #F9FFBE;
+    --primary-300: #F9FD8A;
+    --primary-400: #F7F355;
+    --primary-500: #EDDC21;
+    --primary-600: #BBA20B;
+    --primary-700: #8A6F02;
+    --primary-800: #584100;
+    --primary-900: #261A00;
 
-    /* Accent: Tamarama */
-    --accent-100: #F2FCFF;
-    --accent-200: #BCF2FF;
-    --accent-300: #84ECFC;
-    --accent-400: #4DE9F5;
-    --accent-500: #17E5E8;
-    --accent-600: #08B8B0;
-    --accent-700: #02877A;
-    --accent-800: #005749;
-    --accent-900: #00261E;
+    /* Accent: Aurichalcite */
+    --accent-100: #F2FDFF;
+    --accent-200: #C3F9FF;
+    --accent-300: #93FAFD;
+    --accent-400: #62F9F5;
+    --accent-500: #32F0E0;
+    --accent-600: #12BDA5;
+    --accent-700: #058B70;
+    --accent-800: #015942;
+    --accent-900: #00261A;
 
     /* Neutral */
-    --neutral-100: #FBFCFA;
-    --neutral-200: #E8EBE7;
-    --neutral-300: #D6DAD3;
-    --neutral-400: #C4C9C1;
-    --neutral-500: #B3B8AE;
-    --neutral-600: #8F938A;
-    --neutral-700: #6C6F67;
-    --neutral-800: #484B44;
-    --neutral-900: #252622;
+    --neutral-100: #FCFCFA;
+    --neutral-200: #EBEBE7;
+    --neutral-300: #DADAD5;
+    --neutral-400: #C9C8C2;
+    --neutral-500: #B8B7B0;
+    --neutral-600: #93928B;
+    --neutral-700: #6F6D67;
+    --neutral-800: #4B4944;
+    --neutral-900: #262522;
     
 }
 html, body {
