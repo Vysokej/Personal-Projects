@@ -39,6 +39,8 @@ html, body {
     box-sizing: border-box;
     width: 100%;
     height: 100%;
+
+    background-color: var(--neutral-200);
 }
 .header {
     font-family: "Montserrat", sans-serif;
@@ -58,4 +60,16 @@ ul {
 }
 h1, h2, h3, h4, h5, h6, p {
     color: var(--primary-900);
+}
+/* Hero page ------------ */
+#hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}
+#hero /* delete later */ img {
+    border: 2px solid blue ;
 }
