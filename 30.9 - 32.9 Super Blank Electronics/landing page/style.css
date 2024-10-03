@@ -40,6 +40,7 @@ html, body {
     height: 100%;
     font-size: calc(10px + .5vw);
     background-color: var(--primary-600);
+    scroll-behavior: smooth;
 }
 .header {
     font-family: "Montserrat", sans-serif;
@@ -54,9 +55,12 @@ html, body {
 .rounded {
     border-radius: 10px;
 }
+.icon {
+    height: 30px;
+}
 .CTA {
     transform: scale(0.8);
-    background-color: var(--accent-400);
+    background-color: #0B24BB;
     color: var(--accent-100);
     min-width: 160px;
     width: 30vw;
@@ -67,7 +71,15 @@ html, body {
     align-items: center;
     z-index: 999;
     font-size: 2rem;
-    font-weight: 800;
+    font-weight: 700;
+    transition: 0.15s ease-out;
+    text-wrap: nowrap;
+}
+.CTA:hover {
+    border-radius: 23px;
+    transform: scale(.95);
+    font-weight: 900;
+    background-color: var(--accent-600);
 }
 a {
     text-decoration: none;
@@ -77,6 +89,21 @@ ul {
 }
 h1, h2, h3, h4, h5, h6, p {
     color: var(--primary-900);
+}
+/* Animations */
+.slide {
+    animation: slide both;
+    animation-timeline: view(70% 5%);
+}
+@keyframes slide {
+    from {
+        transform: translateX(-200px) scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0px) scale(1);
+        opacity: 1;
+    }
 }
 /* Hero page ------------ */
 #hero {
@@ -114,4 +141,114 @@ h1, h2, h3, h4, h5, h6, p {
 #hero .CTA {
     position: relative;
     top: calc(30px + .5vw);
+}
+/* Features section ------ */
+#features {
+    background-color: var(--primary-400);
+    margin-top: calc(100px + .5vw);
+    width: 100%;
+    height: auto;
+    padding: 50px 0px 50px 0px;
+}
+#features h1 {
+    text-align: center;
+}
+#features > div {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#features > div div {
+    max-width: 500px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+#features h2 {
+    margin: auto;
+}
+#features ul {
+    padding: 0px;
+    width: 100%;
+}
+#features li {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+/* Reviews */
+#reviews {
+    height: 300px;
+}
+#reviews .container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    overflow-x: visible;
+    width: 100%;
+    height: 100%;
+}
+.review {
+    width: auto;
+    height: 200px;
+    display: flex;
+}
+.review > img {
+    border-radius: 80px 0px 0px 80px;
+    width: 150px;
+    height: 220px;
+    object-fit: cover;
+    z-index: 1;
+}
+.review > div {
+    margin-left: 10px;
+}
+.review > div p {
+    margin-bottom: 0px;
+}
+.text-portion {
+    height: 200px;
+    width: auto;
+    max-width: 250px;
+}
+.wrapper {
+    width: 30px;
+    height: 30px;
+}
+.wrapper .icon {
+    position: relative;
+    top: -30px;
+}
+.wrapper::before {
+    content: "";
+    position: relative;
+    z-index: 0;
+    display: flex;
+    background-color: var(--primary-500);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+/* Order section */
+#order {
+    height: 500px;
+    margin-top: 50px;
+}
+#order .container {
+    /* deleter later */ border: 2px solid blue;
+    max-width: 800px;
+    width: 80%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+#order .container > img {
+    width: 50%;
+
 }
