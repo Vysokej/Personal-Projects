@@ -58,6 +58,9 @@ html, body {
 .icon {
     height: 30px;
 }
+.bold {
+    font-weight: bolder;
+}
 .CTA {
     transform: scale(0.8);
     background-color: #0B24BB;
@@ -236,19 +239,33 @@ h1, h2, h3, h4, h5, h6, p {
 }
 /* Order section */
 #order {
-    height: 500px;
+    height: auto;
     margin-top: 50px;
 }
 #order .container {
-    /* deleter later */ border: 2px solid blue;
     max-width: 800px;
     width: 80%;
     height: auto;
     margin: auto;
     display: flex;
-    flex-wrap: wrap-reverse;
 }
 #order .container > img {
     width: 50%;
-
+    object-fit: cover;
+}
+#order .text-portion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* Footer */ 
+footer {
+    height: 200px;
+    background-color: var(--primary-800);
+    display: flex;
+    flex-direction: column;
+}
+footer > div {
+    margin-left: 10px;
 }
