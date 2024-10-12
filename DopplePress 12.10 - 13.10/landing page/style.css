@@ -1,0 +1,167 @@
+:root {
+    --black: #000000;
+    --black-grey: #292929;
+    --pastel-red: #FF4F4F;
+    --pastel-white: #FFFEF2;
+    --dark-blue: #00254B;
+
+}
+html, body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+html * {
+    transition: 0.15s;
+}
+.header {
+    font-family: "Rubik Mono One", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+.text {
+    font-family: "Inter", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+.section-header {
+    font-size: 80px;
+}
+.small-text {
+    font-size: 14px;
+}
+.icon {
+    height: 30px;
+    width: 30px;
+}
+.flex {
+    display: flex;
+}
+.center {
+    justify-content: center;
+    align-items: center;
+}
+.column {
+    flex-direction: column;
+}
+image {
+    object-fit: cover;
+}
+a {
+    text-decoration: none;
+}
+
+/* Fixed menu */
+nav {
+    width: 120px;
+    height: 120px;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    top: 70px;
+    left: 70px;
+    animation: turn-back ease-out .5s;
+}
+nav img:first-of-type {
+    position: absolute;
+    width: 100%;
+}
+nav img:nth-of-type(2) {
+    width: 100%;
+}
+nav:hover {
+    animation: turn .4s ease-in-out;
+    transform: translate(-2px -4px);
+}
+@keyframes turn-back {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+@keyframes turn {
+    to {
+        transform: rotate(360deg);
+    }
+}
+/* Hero section featuring the company's name and simple art */
+.hero {
+    background-image: url(assets/beige_background.webp);
+    height: auto;
+}
+.hero .text-area  {
+    text-align: center;
+    height: 500px;
+}
+.hero .text-area img {
+    position: absolute;
+    top: 10%;
+    right: 20%;
+    height: 300px;
+}
+.hero .selector {
+    width: 100%;
+    background-color: var(--pastel-red);
+    height: 100px;
+    color: var(--pastel-white);
+    gap: 20px;
+    overflow-x: hidden;
+    position: relative;
+}
+.hero a {
+    position: relative;
+    width: auto;
+    gap: 10px;
+    flex-shrink: 0;
+    font-size: 32px;
+    box-sizing: content-box;
+}
+.hero a:hover {
+    border: 1px solid var(--pastel-white);
+    padding: 20px 0px;
+}
+.hero p {
+    color: var(--pastel-white);
+    width: auto;
+    flex-wrap: nowrap;
+}
+
+/* cta section giving the user links to acces their desired "locations" */
+.CTAS {
+    width: 100%;
+    height: 60vh;
+}
+.CTAS > div {
+    border: 2px solid purple;
+    flex: 1;
+    height: 100%;
+    background-size: cover;
+    overflow: hidden;
+}
+.CTAS h1 {
+    z-index: 2;
+}
+.CTAS img {
+    z-index: 1;
+}
+.CTAS #first {
+    background-image: url(assets/orange-weird-thing.webp);
+    color: var(--pastel-white);
+}
+.CTAS #first img:first-of-type {
+    width: 20%;
+    position: absolute;
+    transition: .5s;
+}
+.CTAS #first img:first-of-type:hover {
+    transform: rotate(20deg) scale(1.04);
+}
+.CTAS #second {
+    background-image: url(assets/puddle_background.webp);
+}
+.CTAS #third {
+    background-image: url(assets/beige_background.webp);
+}
