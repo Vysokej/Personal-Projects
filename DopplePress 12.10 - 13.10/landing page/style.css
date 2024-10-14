@@ -11,6 +11,7 @@ html, body {
     padding: 0px;
     box-sizing: border-box;
     font-size: 18px;
+    height: 100%;
 }
 html * {
     transition: 0.15s;
@@ -51,9 +52,14 @@ image {
 a {
     text-decoration: none;
 }
+em {
+    font-style: normal;
+    color: var(--pastel-red);
+}
 
 /* Fixed menu */
 nav {
+    z-index: 999;
     width: 120px;
     height: 120px;
     position: fixed;
@@ -129,20 +135,26 @@ nav:hover {
     flex-wrap: nowrap;
 }
 
-/* cta section giving the user links to acces their desired "locations" */
+/* shop section showing the user 3 boxes each redirecting to a different section on the web */
 .CTAS {
     width: 100%;
-    height: 60vh;
+    height: 50vh;
 }
 .CTAS > div {
-    border: 2px solid purple;
     flex: 1;
     height: 100%;
     background-size: cover;
+    background-position: center;
     overflow: hidden;
+    text-align: center;
 }
 .CTAS h1 {
     z-index: 2;
+    font-size: 40px;
+    transition: .3s;
+}
+.CTAS h1:hover {
+    transform: scale(1.05);
 }
 .CTAS img {
     z-index: 1;
@@ -150,18 +162,385 @@ nav:hover {
 .CTAS #first {
     background-image: url(assets/orange-weird-thing.webp);
     color: var(--pastel-white);
+    background-position: 0px -5px;
 }
 .CTAS #first img:first-of-type {
     width: 20%;
     position: absolute;
     transition: .5s;
 }
-.CTAS #first img:first-of-type:hover {
+.CTAS #first h1:hover + img{
     transform: rotate(20deg) scale(1.04);
 }
 .CTAS #second {
     background-image: url(assets/puddle_background.webp);
+    color: var(--pastel-red);
+}
+.CTAS #second img {
+    width: 30px;
 }
 .CTAS #third {
     background-image: url(assets/beige_background.webp);
+    color: var(--dark-blue);
+}
+.CTAS #third h1:hover + p {
+    transform: scale(1.05);
+}
+.CTAS #third * {
+    margin: 5px;
+}
+
+/* Description page describing the company and its processes */
+.description {
+    padding: 20px 0px;
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    background-image: url(assets/pink_background.webp);
+}
+.description .buttons {
+    height: auto;
+    width: 100%;
+}
+.description .first {
+    left: 260px;
+    top: 60px;
+    z-index: 2;
+    transform: rotate(10deg);
+}
+.description .second {
+    left: 320px;
+    top: 60px;
+    z-index: 5;
+    transform: rotate(-3deg);
+}
+.description .third {
+    left: 420px;
+    top: -50px;
+    z-index: 4;
+    transform: rotate(5deg);
+}
+.description .forth {
+    left: 480px;
+    top: -60px;
+    z-index: 4;
+    transform: rotate(-8deg);
+}
+.description a {
+    background-color: transparent;
+    color: var(--black);
+    position: relative;
+    z-index: 888;
+}
+.description .wrapper {
+    width: 150px;
+    height: 30px;
+    content: "";
+    display: flex;
+    position: relative;
+    background-color: var(--pastel-white);
+    padding: 16px 32px;
+    border-radius: 50px;
+    border: 1px solid black;
+    
+}
+.description a:hover {
+    font-size: larger;
+}
+.description .container {
+    position: relative;
+    top: -100px;
+    width: 80vw;
+    margin: auto;
+    color: var(--black-grey);
+    align-items: flex-start;
+}
+.description .section-header {
+    font-size: 64px;
+}
+.description .text-area {
+    width: 50%;
+}
+.description img {
+    width: 600px;
+    position: relative;
+    top: -100px;
+}
+
+/* Colors section featuring all the colors being sold, their hues, HEX's and etc */
+.colors {
+    height: auto;
+    position:relative;
+    top: -200px;
+    padding-bottom: 50px;
+    background-image: url(assets/star-background.webp);
+    animation: bg both;
+    animation-timeline: view(0%  29%);
+    
+}
+@keyframes bg {
+    from {
+        background-position: bottom;
+    }
+    to {
+        background-position: top;
+    }
+}
+.colors .container {
+    height: auto;
+    width: 80vw;
+    margin: auto;
+    gap: 20px;
+}
+.colors .text-area .section-header {
+    color: var(--black-grey);
+    font-size: 80px;
+    line-height: 70px;
+}
+.colors .text-area p {
+    width: 500px;
+}
+.colors .text-area {
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+}
+.colors .selector { /*this div contains images of all sold colors.*/
+    flex-wrap: wrap;
+    width: 80%;
+}
+.colors .selector img {
+    width: 22%;
+}
+#color-example-hex {
+    width: auto;
+    height: auto;
+    position: absolute;
+    right: 300px;
+    margin-top: 180px;
+}
+
+/* Prep section featuring how everything is prepped, shipped etc */
+.prep {
+    padding: 20px 0px 100px 0px;
+    margin-top: -200px;
+    background-image: url(assets/green_backgground.webp);
+    overflow: visible;
+}
+.prep .container {
+    margin: auto;
+    width: 80vw;
+    height: auto;
+    justify-content: space-between;
+}
+.prep .section-header {
+    color: var(--pastel-white);
+    text-align: center;
+    font-size: 80px;
+}
+.prep h3 {
+    color: var(--black-grey);
+    font-size: 32px;
+    margin: 10px 0px 0px 0px;
+    text-align: center;
+}
+.prep h2 {
+    text-align: center;
+    margin: 0px;
+    font-size: inherit;
+    font-weight: normal;
+}
+.prep .icon {
+    width: 10px;
+}
+.prep .bar {
+    background-image: url(assets/beige_background.webp);
+    align-items: center;
+    height: auto;
+    width: 30%;
+    gap: 10px;
+}
+.prep .bar span {
+    gap: 10px;
+}
+.prep .bar hr {
+    border: 1px solid orange;
+    width: 80%;
+    height: 1px;
+}
+#paperclip {
+    margin-top: 700px;
+    margin-left: 200px;
+    z-index: 10;
+    transition: .32s;
+}
+#paperclip:hover {
+    transform: scale(1.03) rotate(8deg);
+}
+.prep .pages * {
+    width: 100px;
+    position: absolute;
+    left: 200px;
+}
+.prep .pages *:hover {
+    transform: translateY(-50px);
+}
+.pages .first {
+    margin-left: 0px;
+    z-index: 7;
+}
+.pages .second {
+    margin-left: 20px;
+    z-index: 6;
+}
+.pages .third {
+    margin-left: 40px;
+    z-index: 5;
+}
+.pages .forth {
+    margin-left: 60px;
+    z-index: 4;
+}
+.pages .fifth {
+    margin-left: 80px;
+    z-index: 3;
+}
+.pages .sixth {
+    margin-left: 100px;
+    z-index: 2;
+}
+
+/* Showcase section featuring showcases, mentions in articles, presses, etc, */
+.showcase .row {
+    height: 20vw;
+}
+.showcase img {
+    width: 300px;
+    transform: scale(1.1);
+    z-index: 1;
+}
+.showcase img:hover {
+    filter: brightness(.4);
+}
+.showcase .row > div {
+    flex: 1;
+    overflow: hidden;
+}
+.showcase .desc {
+    height: 310px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 3;
+    transition: 0s;
+    padding: 10px;
+    color: #ffffff;
+    text-align: center;
+}
+.showcase img:hover + .desc {
+    transform: translateY(-310px);
+    z-index: 3;
+}
+.showcase .desc:hover {
+    transform: translateY(-310px);
+}
+
+/* footer styling, indcluding links to other section / social media and etc... */
+footer {
+    padding: 20px 0px;
+    width: 100%;
+    height: 40vh;
+    background-color: var(--black);
+}
+footer .container {
+    margin: auto;
+    width: 60vw;
+    height: 100%;
+    gap: 20px;
+}
+footer .upper {
+    justify-content: space-between;
+    width: 100%;
+    height: 100px;
+}
+footer .upper div {
+    gap: -5px;
+    width: 30%;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+footer .upper div a {
+    color: white;
+    transition: .6s;
+    margin: 0px 10px;
+}
+footer .first:hover {
+    color: red;
+}
+footer .second:hover {
+    color:yellow ;
+}
+footer .third:hover {
+    color: green;
+}
+footer .forth:hover {
+    color: pink;
+}
+footer .fifth:hover {
+    color: blue;
+}
+#follow-img {
+    transition: .32s;
+}
+#follow-img:hover {
+    transform: rotate(20deg);
+    cursor: pointer;
+}
+/* contact form styling */
+footer form {
+    width: 100%;
+    height: 30px;
+}
+footer form input[type="email"] {
+    width: 80%;
+    height: 30px;
+    background-color: transparent;
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    border: 2px solid white;
+}
+
+footer form input[type="email"]:focus, footer form input[type="email"]:hover {
+    border: 2px solid transparent;
+    outline: transparent;
+    background-color: var(--black-grey);
+}
+footer form input[type="email"]::placeholder {
+    padding-left: 5px;
+}
+footer form input[type="submit"] {
+    width: 20%;
+    height: 35px;
+    color: black;
+    background-color: white;
+    font-family: inherit;
+    border: 2px solid white;
+}
+footer form input[type="submit"]:hover {
+    color: rgb(255, 204, 0);
+}
+
+/* last span of the footer containg social media and copyright */
+.upper:last-of-type {
+    color: white;
+}
+.upper:last-of-type p {
+    width: auto;
+    color: var(--pastel-white);
+}
+.upper:last-of-type span {
+    width: auto;
+    gap: 10px;
 }
