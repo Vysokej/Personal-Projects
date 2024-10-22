@@ -71,6 +71,7 @@ html {
     width: 100vw;  
     background-color: var(--background);
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 body {
     overflow-x: hidden;
@@ -129,6 +130,7 @@ body {
     width: 100vw;
     flex-wrap: wrap;
     padding-bottom: 50px;
+    overflow-x: hidden;
 }
 .services .container {
     align-items: flex-start;
@@ -139,7 +141,8 @@ body {
     margin-right: 5px;
 }
 .services .option {
-    min-width: 320px;
+    flex-shrink: 1;
+    width: 23%;
     min-height: 500px;
     background-position: center;
     background-size: cover;
@@ -156,7 +159,7 @@ body {
 }
 .services .option:hover:after { /* this css will trigger after option is hovered */
     height: 500px;
-    width: 320px;
+    width: calc(90vw * 0.23);
     position: absolute;
     content: "";
     display: flex;
@@ -178,6 +181,15 @@ body {
     filter: opacity(1);
     transform: translateY(0px);
 }
+@media (max-width:430px) {
+    .services .option {
+        flex-shrink: 0;
+        width: 320px;
+    }
+    .services .option:hover:after {
+        width: 320px;
+    }
+}
 
 /* about section containing just a simple image with some text */
 .about {
@@ -197,7 +209,7 @@ body {
     max-width: 1000px;
     height: 300px;
 }
-@media (max-width: 400px) {
+@media (max-width: 430px) {
     .about .container {
         flex-direction: column;
     }
@@ -235,6 +247,7 @@ body {
     width: 40%;
 }
 .subscribe > div p:nth-of-type(2) {
+    margin-top: 20px;
     padding-bottom: 10px;
 }
 .subscribe input[type="email"] {
