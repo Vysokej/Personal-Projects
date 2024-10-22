@@ -266,3 +266,39 @@ body {
 .subscribe input[type="submit"]:hover, .subscribe input[type="submit"]:active {
     font-weight: bolder;
 }
+
+/* recipes section containing a grid of images that upon hovered show a link to acces that respective recipe */
+.recipes {
+    height: auto;
+}
+.recipes .container {
+    height: auto;
+}
+.recipes .top {
+    gap: 20px;
+    height: 500px;
+}
+.recipes .top > div {
+    gap: 4%;
+}
+.recipes .top > div img {
+    aspect-ratio: 1/1;
+    height: 48%;
+}
+.recipes .top > img {
+    width: 700px;
+    height: 100%;
+}
+.recipes .bottom img {
+    height: 30%;
+}
+.recipes .bottom {
+    gap: 5%;
+}
+.recipes .bottom img:nth-of-type(1) {
+    width: 20%;
+    aspect-ratio: 1/1;
+}
+.recipes .bottom img:nth-of-type(2) {
+    width: 75%;
+}
