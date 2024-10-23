@@ -270,35 +270,95 @@ body {
 /* recipes section containing a grid of images that upon hovered show a link to acces that respective recipe */
 .recipes {
     height: auto;
+    padding: 50px 0px;
+}
+.recipes .section-header {
+    text-align: center;
 }
 .recipes .container {
+    margin-top: 20px;
     height: auto;
+    gap: 20px;
+    max-width: 1000px;
 }
 .recipes .top {
     gap: 20px;
     height: 500px;
+    overflow: hidden;
 }
 .recipes .top > div {
-    gap: 4%;
+    gap: 20px;
 }
-.recipes .top > div img {
+.recipes .top > div .image {
     aspect-ratio: 1/1;
     height: 48%;
 }
-.recipes .top > img {
-    width: 700px;
+.recipes .top > .image{ /* large broccoli image */
+    width: 100%;
     height: 100%;
 }
-.recipes .bottom img {
-    height: 30%;
+.recipes .bottom .image {
+    height: calc(0.48 * 500px);
 }
 .recipes .bottom {
-    gap: 5%;
+    gap: 20px;
+    width: 100%;
+    height: calc(0.48 * 500px);
+    overflow: hidden;
 }
-.recipes .bottom img:nth-of-type(1) {
-    width: 20%;
+.recipes .bottom  .image:nth-of-type(1) { /* large waffle image */
+    width: 100%;
+    height: 100%;
+}
+.recipes .bottom  .image:nth-of-type(2) { 
     aspect-ratio: 1/1;
 }
-.recipes .bottom img:nth-of-type(2) {
-    width: 75%;
+@media (max-width: 430px) {
+    .image.third, .image.forth {
+        display: none;
+    }
+    .recipes .top, .recipes .bottom {
+        justify-content: center;
+    }
+}
+.recipes .image:not(:hover) {
+    filter: opacity(0);
+    transform: translateY(-20px);
+}
+.recipes .image:hover {
+    filter: opacity(1);
+    transform: translateY(0px);
+}
+
+.recipes .image.small:hover:after {
+    height: calc(0.48 * 500px);
+    aspect-ratio: 1/1;
+    position: absolute;
+    content: "";
+    display: flex;
+    z-index: 2;
+    backdrop-filter: brightness(.8) blur(2px);
+}
+.image {
+    background-position: center;
+    background-size: cover;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    color: var(--text-white);
+}
+.image.first {
+    background-image: url(assets/recipes/glfood1.webp);
+}
+.image.second {
+    background-image: url(assets/recipes/glfood3.webp);
+}
+.image.third {
+    background-image: url(assets/recipes/glfood2.webp);
+}
+.image.forth {
+    background-image: url(assets/recipes/glfood4.webp);
+}
+.image.fifth {
+    background-image: url(assets/recipes/glfood5.webp);
 }
