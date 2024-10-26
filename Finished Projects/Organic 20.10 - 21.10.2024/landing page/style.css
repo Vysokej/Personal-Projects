@@ -1,6 +1,6 @@
 :root {
     --background: #FAF4EB;
-    --background-darker: D8CEC0;
+    --background-darker: #D8CEC0;
     --text-white: #ffffff;
     --text-black: #000000;
     --text-sub: rgba(255,255,255, 0.7);
@@ -45,6 +45,9 @@
 }
 .px14 {
     font-size: 14px;
+}
+.px10 {
+    font-size: 10px;
 }
 .icon {
     width: 24px;
@@ -307,11 +310,8 @@ body {
     overflow: hidden;
 }
 .recipes .bottom  .image:nth-of-type(1) { /* large waffle image */
-    width: 100%;
+    width: calc(100% - 0.48 * 500px);
     height: 100%;
-}
-.recipes .bottom  .image:nth-of-type(2) { 
-    aspect-ratio: 1/1;
 }
 @media (max-width: 430px) {
     .image.third, .image.forth {
@@ -321,13 +321,15 @@ body {
         justify-content: center;
     }
 }
-.recipes .image:not(:hover) {
+.recipes .image p:not(:hover) {
     filter: opacity(0);
+    z-index: 3;
     transform: translateY(-20px);
 }
-.recipes .image:hover {
+.recipes .image.large p:hover {
     filter: opacity(1);
     transform: translateY(0px);
+    z-index: 999;
 }
 
 .recipes .image.small:hover:after {
@@ -361,4 +363,104 @@ body {
 }
 .image.fifth {
     background-image: url(assets/recipes/glfood5.webp);
+    height: calc(0.48 * 500px);
+    width: calc(0.48 * 500px);
+}
+.image.third.large:hover:before {
+    height: 100%;
+    width: 100%;
+    padding-right: 50%;
+    aspect-ratio: 1/1;
+    position: relative;
+    content: "";
+    display: flex;
+    z-index: 2;
+    backdrop-filter: brightness(.8) blur(2px);
+}
+.image.forth.large:hover:before {
+    height: 100%;
+    width: 100%;
+    padding-right: 80%;
+    aspect-ratio: 1/1;
+    position: relative;
+    content: "";
+    display: flex;
+    z-index: 2;
+    backdrop-filter: brightness(.8) blur(2px);
+}
+.recipes p {
+    width: 100%;
+    height: 100%;
+    color: var(--text-white);
+    z-index: 999;
+}
+
+/* contact section featuring available hours, telephone number, and email */
+.contact {
+    background-color: var(--text-white);
+    padding: 25px 0px;
+}
+.contact .section-header {
+    text-align: center;
+}
+.contact .container {
+    justify-content: center;
+}
+.line {
+    justify-content: flex-start;
+    margin-top: 10vw;
+    width: 50%;
+}
+.line hr {
+    min-width: 200px;
+    width: calc(80% - 50px);
+    background-color: var(--background-darker);
+    border: 1px solid var(--background-darker);
+    height: 1px;
+    opacity: .5;
+}
+.contact .container > img:first-of-type { /* happy farmer image */
+    width: 50%;
+    max-height: 600px;
+}
+@media (max-width: 430px) {
+    .contact .container > img:first-of-type {
+        display: none;
+    }
+    .contact .text-area {
+        width: 80% !important;
+        align-items: flex-start !important;
+    }
+    .line {
+        margin: auto !important;
+        margin-right: 300px;
+    }
+}
+.contact .text-area {
+    width: 50%;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.contact .text-area p {
+    max-width: 250px;
+}
+.info {
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+.info > div {
+    gap: 1px;
+}
+
+/* Footer including basic footer info */
+footer {
+    background-color: var(--background-darker);
+    height: 50px;
+    align-items: center;
+    justify-content: flex-start;
+}
+footer p {
+    margin-left: 5vw;
 }
