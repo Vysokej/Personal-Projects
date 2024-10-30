@@ -1,0 +1,509 @@
+:root {
+    --primary-green: #4CAF50;      /* Fresh, vibrant green for main accents */
+    --secondary-green: #81C784;    /* Light, pastel green for softer accents */
+    --earthy-brown: #8D6E63;       /* Natural, warm brown for grounding elements */
+    --soft-beige: #F5F5DC;         /* Neutral beige for backgrounds */
+    --deep-forest: #2E7D32;        /* Dark green for headers or footers */
+    --accent-yellow: #FFEB3B;      /* Bright yellow for highlights and buttons */
+    --soft-white: #FAFAFA;         /* Off-white for a gentle, clean background */
+    --sub-text-white: rgba(255,255,255,0.6);
+    --sub-text-black: rgba(0,0,0,0.6);
+}
+/* Font family classes */
+.text {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.header {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* font size classes */
+.px10 {
+    font-size: .5rem;
+}
+.px14 {
+    font-size: .8rem;
+}
+.px18 {
+    font-size: 1rem;
+}
+.px24 {
+    font-size: 1.33rem;
+}
+.px40 {
+    font-size: 2.1rem;
+}
+
+/* Layout classes */
+.flex {
+    display: flex;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+}
+.cta {
+    display: flex;
+    border-radius: 30px;
+    transition: ease-out .2s;
+    justify-content: center;
+    padding: 10px 30px;
+}
+.cta:hover {
+    border-radius: 1px;
+}
+.icon-big {
+    width: 32px;
+    height: 32px;
+}
+.icon {
+    width: 24px;
+    height: 24px;
+}
+.container {
+    width: 90vw;
+    margin: auto;
+    height: auto;
+    display: flex;
+}
+section {
+    width: 100vw;
+    height: auto;
+    scroll-snap-align: start;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+img {
+    object-fit: cover;
+}
+html, body {
+    font-size: 18px;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+html * {
+    margin: 0px;
+    padding: 0px;
+    transition: .2s;
+}
+
+ /* media queries */
+@media (max-width: 750px) {
+    nav .container div:nth-of-type(2) {
+        display: none;
+    }
+    #hamburger {
+        display: unset !important;
+    }
+    html, body {
+        font-size: 14px;
+    }
+    .hero .container * {
+        max-width: 210px;
+    }
+    .about {
+        padding-top: 0px !important;
+        margin-top: -2px;
+    }
+    .about .container {
+        flex-wrap: wrap-reverse;
+    }
+    .about .container img {
+        width: 100vw;
+    }
+    .store .row.second {
+        display: none !important;
+    }
+    .selected-blog {
+        display: none !important;
+    }
+    .contact .container {
+        flex-direction: column !important;
+    }
+    form {
+        width: 100% !important;
+    }
+}
+
+/* Navbar styling */
+nav {
+    z-index: 999;
+    position: fixed;
+    height: 50px;
+    width: 100vw;
+    background-color: var(--earthy-brown);
+    color: var(--soft-white);
+}
+nav * {
+    align-items: center;
+}
+nav .container {
+    justify-content: space-between;
+}
+nav .container div:first-of-type { /* left side of navbar with the logo and company name */
+    width: 200px;
+    gap: 5px;
+}
+nav .container div:nth-of-type(2) { /* right side of navbar with links */
+    width: auto;
+    gap: 20px;
+}
+nav a {
+    gap: 5px;
+    transition: .2s;
+    border-bottom: 2px solid transparent;
+}
+nav a:hover {
+    border-bottom: 2px solid var(--soft-white);
+}
+nav p {
+    font-weight: lighter;
+}
+#hamburger {
+    display: none;
+    width: 40px;
+    height: 40px;
+}
+
+/* Hero section, has a video in bg, and text aligned left */
+.hero {
+    height: calc(100vh - 48px);
+    margin-top: 50px;
+}
+
+/* video in background styling */
+.video-wrap {
+    height: calc(100vh - 50px);
+    width: 100vw;
+    position: absolute;
+    top: 0px;
+    z-index: 1;
+}
+.video-wrap * {
+    margin-top: 48px;
+    height: calc(100vh - 48px);
+    width: 100vw;
+    object-fit: cover;
+    position: absolute;
+    background-color: var(--primary-green);
+    z-index: 2;
+}
+.video-wrap .filter {
+    background-color: rgba(0, 0, 0, .7) !important;
+    z-index: 3 !important;
+}
+.hero .container {
+    position: relative;
+    text-align: left;
+    height: calc(100% - 52px);
+    z-index: 5;
+    width: 40%;
+    min-width: 375px;
+    max-width: 500px;
+    justify-content: flex-start;
+    margin: unset;
+    backdrop-filter: blur(20px);
+    padding: 50px 5vw 0px 0px;
+    gap: 5px;
+}
+.hero .container * {
+    margin-left: 5vw;
+}
+.hero .container h1 {
+    font-weight: 400;
+    color: #ffffff;
+}
+.hero .container p {
+    font-weight: 100;
+    color: var(--sub-text-white);
+}
+.hero .cta {
+    margin-top: 25px;
+    color: #ffffff;
+    background-color: var(--primary-green);
+    width: 120px;
+}
+.hero .cta:hover {
+    background-color: hsl(123, 46%, 24%);
+}
+
+/* About section */
+.about {
+    padding: 80px 0px;
+}
+.about .container {
+    justify-content: center;
+}
+.about h1 {
+    color: var(--deep-forest);
+}
+.about p {
+    color: #000000;
+    margin-top: 8px !important;
+}
+.about .cta {
+    background-color: var(--earthy-brown);
+    color: var(--soft-beige);
+}
+.about .container *:not(.cta, img) {
+    min-width: 210px;
+    max-width: 500px;
+    margin: 15px;
+    text-align: left;
+}
+.about .cta {
+    width: 120px !important;
+    margin-top: 20px;
+    margin-left: 13px;
+}
+.about .cta:hover {
+    background-color: hsl(16, 18%, 37%);
+}
+.about .container div {
+    max-width: 500px;
+}
+.about img {
+    width: 50%;
+    max-width: 600px;
+}
+
+/* store section, has a 3x2 with some products to buy, non-functional though, */
+.store {
+    background-color: var(--soft-beige);
+    height: auto;
+    padding: 5vw 0px;
+}
+.store .container {
+    margin-top: calc(15px + .1vw);
+    height: auto;
+    flex-wrap: wrap;
+    max-width: 845px;
+    gap: 30px;
+}
+.store h1 {
+    color: var(--primary-green);
+    text-align: center;
+}
+.store .container > .row {
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.store .icon-wrapper {
+    border-radius: 50px;
+    background-color: var(--earthy-brown);
+    height: 32px;
+    width: 32px;
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.store .icon-wrapper:hover {
+    background-color: hsl(16, 18%, 37%);
+}
+.store .icon-wrapper .icon {
+    margin-top: -2px;
+}
+.store img:not(.icon) {
+    aspect-ratio: 1/1;
+    height: 250px;
+    max-height: 250px;
+}
+.store img:not(.icon):hover {
+    transform: scale(1.02) translateY(-1px);
+}
+.store .product {
+    gap: 5px;
+    width: 250px;
+    overflow: hidden;
+    flex: 1;
+    min-width: 250px;
+}
+.store .procut:hover {
+    box-shadow: in;
+}
+.store span.row {
+    max-width: 845px;
+    margin-top: 5px;
+    justify-content: space-between;
+}
+.store p {
+    color: var(--sub-text-black);
+}
+
+/* blog section ,featuring a choice of blogs the user can choose from, and a second part that has the selected blog showcased */
+.blog {
+    height: auto;
+    padding: 40px 0px;
+    --padding-blog: 20px;
+    --blog-h2: #000000;
+    --highlight-blog: hsl(16, 18%, 47%);
+}
+.blog h1 {
+    color: var(--primary-green);
+    margin-left: 5vw;
+}
+.blog .container {
+    justify-content: flex-start;
+    gap: calc(200px + 3.5vw);
+}
+.blog .container > div.column { /* the stack of blogs */
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--padding-blog);
+    margin-top: var(--padding-blog);
+    max-width: 400px;
+    
+}
+.blog .option { /* blog selection option */
+    border-bottom: 1px solid #000000;
+    padding-bottom: 15px;
+    width: 100%;
+    transition: .05s ease;
+    padding-right: 5vw;
+}
+.blog .option h2 { /* blog selection title */
+    color: var(--blog-h2);
+}
+.blog .option:hover {
+    border-bottom: 1px solid var(--highlight-blog);
+    --blog-h2: var(--highlight-blog) !important;
+}
+.blog .option p:nth-of-type(1) { /* short description of blog */
+    color: var(--sub-text-black);
+    margin-top: 5px;
+}
+.blog .option p:nth-of-type(2) { /* author's name */
+    margin-top: 10px;
+    color: rgba(0,0,0,0.4);
+}
+/* selected blog styling */
+.selected-blog {
+    width: 60%;
+}
+.selected-blog h3 {
+    color: #000000;
+}
+.selected-blog img {
+    width: 100%;
+}
+.selected-blog p {
+    color: var(--sub-text-black);
+}
+
+/* contact section featuring important details, how to contact and write an email to ecohaven, available hours etc ... */
+.contact {
+    padding: 40px 0px;
+}
+.contact .container {
+    margin-top: 50px;
+    gap: calc(100px + 1.5vw);
+    justify-content: center;
+}
+.contact h1.px40 { /* section header */
+    color: var(--earthy-brown);
+    text-align: center;
+}
+.contact h2.px24 {
+    color: var(--earthy-brown);
+    padding-bottom: 20px;
+}
+.contact .container > div:first-of-type { /* first column with hours location and phone number */
+    gap: 10px;
+}
+.contact .container > div:first-of-type h4 {
+    font-weight: 300;
+}
+.contact .info {
+    gap: 10px;
+    margin-top: 10px;
+}
+.contact .info p {
+    font-weight: 300;
+}
+.contact .info .column {
+    gap: 2px;
+}
+.contact .info .icon-big {
+    width: 40px;
+    height: 40px;
+}
+form { /* form for email submission styling */
+    width: 70%;
+    max-width: 500px;
+    gap: 40px;
+}
+form .row {
+    justify-content: space-between;
+}
+form label:has(#topic) { /* this targets the textarea label*/ 
+    width: 100%;
+    outline: none;
+}
+form #topic { /* this targets the textarea */ 
+    border: 1px solid #000000;
+    height: 100px;
+}
+form input[type="text"], form input[type="email"] {
+    outline: none;
+    border: none;
+    padding-bottom: 2px;
+    padding: 5px;
+}
+form label {
+    width: 40%;
+    border-bottom: 1px solid #000000;
+    gap: 10px;
+}
+form input[type="submit"] {
+    background-color: var(--deep-forest);
+    border: none;
+    color: #fff;
+}
+
+/* Footer styling */
+footer {
+    z-index: 1;
+    margin-top: 20px;
+    background-color: #2E5E4E;
+    color: var(--soft-beige);
+    height: auto;
+    width: 100vw;
+}
+footer div {
+    margin-left: 5vw;
+    padding: 20px 0px;
+    gap: 5px;
+    width: 120px;
+}
+footer a {
+    color: var(--sub-text-white);
+}
+footer a:hover {
+    letter-spacing: 1px;
+    color: hsl(0, 0%, 95%);
+}
+footer div h3 {
+    margin-bottom: 10px;
+}
+footer #mentions {
+    bottom: 5px;
+    position: absolute;
+    z-index: 3;
+    color: var(--sub-text-white);
+}
